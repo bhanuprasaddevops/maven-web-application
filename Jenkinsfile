@@ -10,7 +10,10 @@ echo "GitHub BranhName ${env.BRANCH_NAME}"
   
       echo "Jenkins Home ${env.JENKINS_HOME}"
       echo "Jenkins URL ${env.JENKINS_URL}"
-      echo "JOB Name ${env.JOB_NAME}"   
+      echo "JOB Name ${env.JOB_NAME}" 
+      
+      
+      properties([buildDiscarder(logRotator(artifactDaysToKeepStr: '5', artifactNumToKeepStr: '5', daysToKeepStr: '5', numToKeepStr: '5')), pipelineTriggers([pollSCM('* * * * *')])])
 
 stage (' checkoutCodeFromSCM ')
 
