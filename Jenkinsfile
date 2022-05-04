@@ -1,4 +1,4 @@
-node ('flipkart')
+node ('java_web')
 
 {
 
